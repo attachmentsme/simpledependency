@@ -1,6 +1,6 @@
 h1. Simpledependency: An Embarrassingly Simple Library for Replacing Dependencies
 
-p. Simpledependency lets you globally change the behaviour of once class so that it is instantiated as a different class.
+p. Simpledependency lets you globally change the behaviour of one class so that it is instantiated as a different class.
 
 p. Why is this good? It's good for replacing far reaching dependencies that would screw with unit tests, e.g., make Memcached always instantiated as a faked version.
 
@@ -10,14 +10,12 @@ p. Decorate the replaceable classes with the @dependency_decorator decorator.
 
 bc. @dependency_decorator
 class Example(object):
-    
 	def __init__(self):
 		print 'Example class called.'
 
 p. Create a replacement class, in my case this is usually a mock or fake object for unit testing.
 
 bc. class MockExample(object):
-	
 	def __init__(self):
 		print 'Mock example class called.'
 		
